@@ -14,9 +14,9 @@ def build_generator():
     input_layer = Input(shape=input_shape)
 
     # First 3D deconvolution block
-    a = Deconv3D(
-        filters=filters[0], kernel_size=kernel_sizes[0], strides=strides[0]
-    )(input_layer)
+    a = Deconv3D(filters=filters[0],
+                 kernel_size=kernel_sizes[0],
+                 strides=strides[0])(input_layer)
     a = BatchNormalization()(a, training=True)
     a = Activation(activation=activations[0])(a)
 
